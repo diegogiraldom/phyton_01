@@ -1,0 +1,15 @@
+import numpy as np
+numero = int(input('digite un entero N para la matriz (N x N):'))
+d = np.zeros([numero,numero])   
+##lleno la lista de de numeros de 0-99
+u_list = []
+for i in range(numero**2):
+  u_list.append(i) ## [0,1,2,3,4,5,...99]
+##genero una posicion aletorio de uno de los numeros disponibles y lo borra de la lista 
+for i in range(numero):
+  for j in range(numero):
+    num_rand = (np.random.randint(0,len(u_list)))
+    d[i,j]=u_list[num_rand]
+    u_list.pop(num_rand)
+##imprimo la matriz       
+print('matriz gnerada\n',d)
